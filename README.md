@@ -5,13 +5,17 @@ Athena is an interactive AI agent running on a tablet device mounted in an open 
 
 - clone this repository
 
-### Train the model
-- > rasa train
+### run rasa
+Inside rasa directory
+- rasa train
+- rasa run -m models --enable-api --cors "*" --debug
 
-### Run the bot 
-- > rasa run -m models --enable-api --cors "*" --debug
+### Generate a public URL pointing to your local Rasa server
+Download ngrok(https://ngrok.com/download) and run `ngrok http 5005` in a new terminal window to generate a public URL pointing to your local Rasa server, which is running on port 5005
 
-### Run the actions seperately
- - > rasa run actions
+### run android assistant
+open aimybox-android-assistant on android studio
+- Connect your Android device to your local machine using a USB cable and click on the green play button in the Android Studio toolbar.
+Note: Be sure to replace the Rasa webhook URL inside AimyboxApplication class under app/src/main/java/com.justai.aimybox.assistant with your ngrok URL!
 
- - Open index.html file in browser.
+
