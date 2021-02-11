@@ -12,18 +12,13 @@ class ChatBubble extends StatefulWidget {
 }
 
 class _ChatBubbleState extends State<ChatBubble> {
-  DateFormat dateFormat = DateFormat("HH:mm:ss");
+  DateFormat dateFormat = DateFormat("HH:mm");
   String formattedDate;
 
   @override
-  void initState() {
-    super.initState();
-    formattedDate = dateFormat.format(DateTime.now());
-    // formattedDate = DateFormat('Hms', 'en_US').parse(formattedDate).toString();
-  }
-
-  @override
   Widget build(BuildContext context) {
+    formattedDate = dateFormat.format(DateTime.now());
+
     return Row(
       mainAxisAlignment: widget.chatMessage.type == MessageType.Sender
           ? MainAxisAlignment.end

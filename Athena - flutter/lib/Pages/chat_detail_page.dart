@@ -40,6 +40,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   void initializeTts() async {
     await flutterTts.setLanguage("en-US");
     await flutterTts.setPitch(1);
+    await flutterTts.awaitSpeakCompletion(true);
 
     await flutterTts.speak('Hi I am Athena, I can: ' +
         'Provide you with a list of recommended area restaurants' +
@@ -116,7 +117,6 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       _speech.listen(
         onResult: (val) {
           setState(() {
-            print("***********" + val.recognizedWords);
             _isListening = false;
 
             if (val.recognizedWords != '') sendSms(val.recognizedWords);
@@ -145,15 +145,13 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     ChatMessage replyMessage =
         ChatMessage(message: reply, type: MessageType.Receiver);
 
-    await flutterTts.speak(reply);
     setState(() {
       chatMessage.insert(0, replyMessage);
     });
-
-    // _scrollController.animateTo(
-    //   _scrollController.position.maxScrollExtent,
-    //   curve: Curves.easeOut,
-    //   duration: const Duration(milliseconds: 300),
-    // );
+    await flutterTts.speak(reply).then((value) {
+      Future.delayed(const Duration(seconds: 2), () {
+        _listen();
+      });
+    });
   }
 }
