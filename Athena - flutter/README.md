@@ -1,10 +1,13 @@
-# athena_2
+# Athena
 
-A new Flutter project.
+This project is a chatbot app made to assist customers of a certain hotel. The customer communicates with the bot through voice command.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- To run this project 
+    - run - "flutter pub get"
+    - open main.dart and run the app
+
 
 A few resources to get you started if this is your first Flutter project:
 

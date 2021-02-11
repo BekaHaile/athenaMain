@@ -1,4 +1,3 @@
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:athena_2/Components/chat_bubble.dart';
 import 'package:athena_2/Models/chat_message.dart';
 import 'package:athena_2/Services/api.dart';
@@ -14,20 +13,15 @@ class ChatDetailPage extends StatefulWidget {
 
 class _ChatDetailPageState extends State<ChatDetailPage> {
   List<ChatMessage> chatMessage = [
-    ChatMessage(message: "Hi I am athena, I can:", type: MessageType.Receiver),
     ChatMessage(
-        message: "  - Provide you with a list of recommended area restaurants",
-        type: MessageType.Receiver),
-    ChatMessage(
-        message:
-            "  - Get you directions to the most frequently requested locations",
-        type: MessageType.Receiver),
-    ChatMessage(
-        message: "  - Get you a copy of the folio for your stay",
+        message: "Hi I am athena, I can: \n" +
+            "- Provide you with a list of recommended area restaurants \n" +
+            "- Get you directions to the most frequently requested locations  \n" +
+            "- Get you a copy of the folio for your stay",
         type: MessageType.Receiver),
   ];
 
-  ScrollController _scrollController = new ScrollController();
+  // ScrollController _scrollController = new ScrollController();
   FlutterTts flutterTts = FlutterTts();
 
   stt.SpeechToText _speech;
@@ -56,45 +50,47 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
         title: Text('Athena'),
       ),
-      body: Stack(
-        children: <Widget>[
-          Container(
-            height: MediaQuery.of(context).size.height * 0.78,
-            child: ListView.builder(
-              itemCount: chatMessage.length,
-              shrinkWrap: true,
-              padding: EdgeInsets.only(top: 10, bottom: 10),
-              // physics: NeverScrollableScrollPhysics(),
-              controller: _scrollController,
-              itemBuilder: (context, index) {
-                return ChatBubble(
-                  chatMessage: chatMessage[index],
-                );
-              },
-            ),
-          ),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              padding: EdgeInsets.only(right: 30, bottom: 15),
-              child: FloatingActionButton(
-                onPressed: () async {
-                  // sendSms();
-                  _listen();
+      body: Container(
+        padding: EdgeInsets.only(top: 10),
+        child: Column(
+          children: <Widget>[
+            Expanded(
+              child: ListView.separated(
+                physics: BouncingScrollPhysics(),
+                separatorBuilder: (context, index) {
+                  return const SizedBox(height: 10.0);
                 },
-                child: Icon(
-                  Icons.mic,
-                  color: Colors.white,
-                ),
-                backgroundColor: _isListening ? Colors.green : Colors.red,
-                elevation: 0,
+                reverse: true,
+                itemCount: chatMessage.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ChatBubble(chatMessage: chatMessage[index]);
+                },
               ),
             ),
-          )
-        ],
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                padding: EdgeInsets.only(right: 30, bottom: 15),
+                child: FloatingActionButton(
+                  onPressed: () async {
+                    // sendSms();
+                    _listen();
+                  },
+                  child: Icon(
+                    Icons.mic,
+                    color: Colors.white,
+                  ),
+                  backgroundColor: _isListening ? Colors.green : Colors.red,
+                  elevation: 0,
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
@@ -140,7 +136,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     ChatMessage newMessage =
         ChatMessage(message: text, type: MessageType.Sender);
     setState(() {
-      chatMessage.add(newMessage);
+      chatMessage.insert(0, newMessage);
     });
 
     dynamic data = {"message": text, "sender": "id344"};
@@ -151,29 +147,13 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
 
     await flutterTts.speak(reply);
     setState(() {
-      chatMessage.add(replyMessage);
+      chatMessage.insert(0, replyMessage);
     });
 
-    _scrollController.animateTo(
-      _scrollController.position.maxScrollExtent,
-      curve: Curves.easeOut,
-      duration: const Duration(milliseconds: 300),
-    );
-  }
-
-  Widget typingIndicator() {
-    return SizedBox(
-      width: 250.0,
-      child: TyperAnimatedTextKit(
-        onTap: () {
-          print("Tap Event");
-        },
-        text: [
-          "...",
-        ],
-        textStyle: TextStyle(fontSize: 30.0, fontFamily: "Bobbers"),
-        textAlign: TextAlign.start,
-      ),
-    );
+    // _scrollController.animateTo(
+    //   _scrollController.position.maxScrollExtent,
+    //   curve: Curves.easeOut,
+    //   duration: const Duration(milliseconds: 300),
+    // );
   }
 }
