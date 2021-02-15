@@ -1,4 +1,5 @@
 import 'package:athena_2/Components/chat_bubble.dart';
+import 'package:athena_2/Components/loader.dart';
 import 'package:athena_2/Models/chat_message.dart';
 import 'package:athena_2/Services/api.dart';
 import 'package:flutter/cupertino.dart';
@@ -26,7 +27,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
 
   stt.SpeechToText _speech;
   bool _isListening = false;
-  // double _confidence = 1.0;
+  bool _isTalking = true;
   bool initialized = false;
 
   @override
@@ -42,10 +43,16 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     await flutterTts.setPitch(1);
     await flutterTts.awaitSpeakCompletion(true);
 
-    await flutterTts.speak('Hi I am Athena, I can: ' +
-        'Provide you with a list of recommended area restaurants' +
-        'Get you directions to the most frequently requested locations' +
-        'Get you a copy of the folio for your stay');
+    await flutterTts
+        .speak('Hi I am Athena, I can: ' +
+            'Provide you with a list of recommended area restaurants' +
+            'Get you directions to the most frequently requested locations' +
+            'Get you a copy of the folio for your stay')
+        .then((value) {
+      setState(() {
+        _isTalking = false;
+      });
+    });
   }
 
   @override
@@ -72,24 +79,29 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                 },
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child: Container(
-                padding: EdgeInsets.only(right: 30, bottom: 15),
-                child: FloatingActionButton(
-                  onPressed: () async {
-                    // sendSms();
-                    _listen();
-                  },
-                  child: Icon(
-                    Icons.mic,
-                    color: Colors.white,
-                  ),
-                  backgroundColor: _isListening ? Colors.green : Colors.red,
-                  elevation: 0,
-                ),
-              ),
-            )
+            _isTalking
+                ? Container()
+                : Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      padding: EdgeInsets.only(right: 30, bottom: 15),
+                      child: FloatingActionButton(
+                        onPressed: () async {
+                          //Start litsening
+                          _listen();
+                        },
+                        child: _isListening
+                            ? Loader()
+                            : Icon(
+                                Icons.mic,
+                                color: Colors.white,
+                              ),
+                        backgroundColor:
+                            _isListening ? Colors.white : Colors.red,
+                        elevation: 0,
+                      ),
+                    ),
+                  )
           ],
         ),
       ),
