@@ -98,7 +98,8 @@ class HotelDetailsPage extends StatelessWidget {
                                       size: 16.0,
                                       color: Colors.grey,
                                     )),
-                                    TextSpan(text: "8 km away")
+                                    TextSpan(
+                                        text: "${data['distance']} km away")
                                   ]),
                                   style: TextStyle(
                                       color: Colors.black, fontSize: 13.0),
@@ -203,3 +204,4 @@ class HotelDetailsPage extends StatelessWidget {
     );
   }
 }
+// "https://upload.wikimedia.org/wikipedia/commons/6/62/Barbieri_-_ViaSophia25668.jpg"),

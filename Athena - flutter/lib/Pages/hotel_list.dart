@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 
 class HotelList extends StatelessWidget {
-  static final String path = "lib/src/pages/lists/list1.dart";
+  final data;
+  HotelList(this.data);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hotel list in your area"),
+        title: data["type"] == "restaurant"
+            ? Text("Recommended area restaurants")
+            : Text("Frequently requested locations"),
         elevation: 2,
       ),
-      body: Lists(),
+      body: Lists(data),
     );
   }
 }
@@ -21,60 +24,105 @@ class Item {
   final String place;
   final String ratings;
   final String image;
+  final String distance;
 
-  Item({this.title, this.catagory, this.place, this.ratings, this.image});
+  Item(
+      {this.title,
+      this.catagory,
+      this.place,
+      this.ratings,
+      this.image,
+      this.distance});
 }
 
 class Lists extends StatelessWidget {
+  final data;
+  Lists(this.data);
+
   final List<Item> _data = [
+    Item(
+      title: 'Bavel',
+      catagory: "Restaurant",
+      place: "LA",
+      ratings: "5.0/80",
+      image:
+          "https://upload.wikimedia.org/wikipedia/commons/6/62/Barbieri_-_ViaSophia25668.jpg",
+      distance: "5",
+    ),
+    Item(
+        title: 'LUCY LOUNGE & RESTAURANT',
+        catagory: "Restaurant",
+        place: "LA",
+        ratings: "4.5/90",
+        image: "https://www.ahstatic.com/photos/b3g8_rsr001_00_p_1024x768.jpg",
+        distance: "6"),
+    Item(
+        title: 'LA Middle Eastern Restaurant',
+        catagory: "Restaurant",
+        place: "LA",
+        ratings: "4.5/90",
+        distance: "3.2",
+        image:
+            "https://cdn.vox-cdn.com/thumbor/hgD54g73-szNhswf_5B425Kp8Yg=/0x0:2000x1342/1200x800/filters:focal(840x511:1160x831)/cdn.vox-cdn.com/uploads/chorus_image/image/62739771/JakobLayman.0418.Bavel_015.0.jpg"),
+    Item(
+        title: 'ANTICA BAR AND RESTAURANT',
+        catagory: "Restaurant",
+        place: "LA",
+        ratings: "4.5/90",
+        distance: "2.5",
+        image:
+            "https://media-cdn.tripadvisor.com/media/photo-s/02/3e/d9/2d/filename-dsc08785-jpg.jpg"),
+    Item(
+        title: 'Rara Restaurant',
+        catagory: "Restaurant",
+        place: "LA",
+        ratings: "4.5/90",
+        distance: "4",
+        image:
+            "https://ichef.bbci.co.uk/news/1024/cpsprodpb/102D8/production/_112546266_mediaitem112546106.jpg"),
+  ];
+
+  final List<Item> _data2 = [
     Item(
         title: 'Gardens By the Bay',
         catagory: "Gardens",
-        place: "Singapore",
+        place: "LA",
         ratings: "5.0/80",
+        distance: "20",
         image:
-            "https://media.cntraveler.com/photos/5c06e5a701ffc86b13da2528/master/w_2540,h_1694,c_limit/The-Oberoi-Udaivilas,-Udaipur__2018_Premier-Lake-View-Rooms-with-Semi-Private-Pools---The-Oberoi-Udaivilas,-Udaipur-01.jpg"),
+            "https://www.worldatlas.com/r/w1200/upload/5c/36/ae/shutterstock-1014644104.jpg"),
     Item(
-        title: 'Singapore Zoo',
+        title: 'Planet ware',
         catagory: "Parks",
-        place: "Singapore",
+        place: "LA",
         ratings: "4.5/90",
+        distance: "2",
         image:
-            "https://i2.wp.com/theluxurytravelexpert.com/wp-content/uploads/2020/02/HEADER-e1581690281650.jpg?fit=1200%2C675&ssl=1"),
+            "https://www.planetware.com/wpimages/2020/03/world-most-visited-cities-bangkok-thailand.jpg"),
     Item(
         title: 'National Orchid Garden',
         catagory: "Parks",
-        place: "Singapore",
+        place: "LA",
         ratings: "4.5/90",
+        distance: "8",
         image:
-            "https://www.orangesmile.com/ru/foto/futuristic-hotels/apeironhotel.jpg"),
-    Item(
-        title: 'Godabari',
-        catagory: "Parks",
-        place: "Singapore",
-        ratings: "4.5/90",
-        image:
-            "https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"),
-    Item(
-        title: 'Rara',
-        catagory: "Parks",
-        place: "Singapore",
-        ratings: "4.5/90",
-        image:
-            "https://www.luxurylifestylemag.co.uk/wp-content/uploads/2018/06/emirates-palace-abu-dhabi-terrace-view2.jpgwidth1905height794modecropanchortopcenterautorotatetruequality90scalebothprogressivetrueencoderfreeimage.jpg"),
+            "https://pix10.agoda.net/hotelImages/4139035/0/05ca7d8f75d108aea5a80f2eab31a682.jpg?s=1024x768"),
   ];
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.all(6),
-      itemCount: _data.length,
+      itemCount: data["type"] == "restaurant" ? _data.length : _data2.length,
       itemBuilder: (BuildContext context, int index) {
-        Item item = _data[index];
+        Item item = data["type"] == "restaurant" ? _data[index] : _data2[index];
         return InkWell(
           onTap: () {
-            Navigator.pushNamed(context, "/hotelDetail",
-                arguments: {"image": item.image, "name": item.title});
+            Navigator.pushNamed(context, "/hotelDetail", arguments: {
+              "image": item.image,
+              "name": item.title,
+              "distance": item.distance
+            });
           },
           child: Card(
             elevation: 3,

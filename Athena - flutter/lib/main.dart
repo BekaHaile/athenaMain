@@ -22,7 +22,6 @@ class MyApp extends StatelessWidget {
         home: AthenaHome(),
         routes: {
           '/chatDetail': (BuildContext context) => ChatDetailPage(),
-          '/hotelList': (BuildContext context) => HotelList(),
         },
         onGenerateRoute: (RouteSettings settings) {
           final requests = settings.arguments;
@@ -31,6 +30,11 @@ class MyApp extends StatelessWidget {
             case '/hotelDetail':
               return MaterialPageRoute(
                   builder: (_) => HotelDetailsPage(
+                        requests,
+                      ));
+            case '/hotelList':
+              return MaterialPageRoute(
+                  builder: (_) => HotelList(
                         requests,
                       ));
             default:

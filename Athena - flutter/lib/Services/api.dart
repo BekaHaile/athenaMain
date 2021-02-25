@@ -16,7 +16,7 @@ class API {
     try {
       response = await http.post(
         Uri.encodeFull(
-            "https://7eecb2e4ee4c.ngrok.io/webhooks/rest/webhook"), //uri of api
+            "https://be3d8ef506ec.ngrok.io/webhooks/rest/webhook"), //uri of api
         headers: {
           "Accept": "application/json; charset=UTF-8",
         },
