@@ -8,6 +8,12 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - thanks
+  - further_greet
+  - hotel_locations
+  - tourist_locations 
+  - work_greet
+  - unknown
 
 responses:
   utter_greet:
@@ -26,9 +32,35 @@ responses:
   utter_goodbye:
   - text: "Bye"
 
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  utter_iamathena:
+  - text: "I am Athena."
+
+  utter_welcome:
+  - text: "You're most welcome."
+
+  utter_fine:
+  - text: "I'm fine, thank you for asking."
+
+  utter_hotels:
+  - text: "Here is a list of nearby restaurants."
+
+  utter_tourists:
+  - text: "Here are some tourist locations you might be interested in."
+
+  utter_service:
+  - text: "I provide required information."
+
+  utter_sorry:
+  - text: "Sorry about that."
+
+  utter_awesome:
+  - text: "Awesome."
+
+  utter_unknown_sorry:
+  - text: "I'm sorry I can't help you with that."
+
+
 
 session_config:
-  session_expiration_time: 60
+  session_expiration_time: 80
   carry_over_slots_to_new_session: true
