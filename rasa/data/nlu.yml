@@ -17,12 +17,20 @@ nlu:
     - goodevening
     - good afternoon
 
+- intent: further_greet
+  examples: |
+    - how are you?
+    - are you ok?
+    - are you well?
+    - is everything ok with you?
+
 - intent: goodbye
   examples: |
     - good afternoon
     - cu
-    - good by
-    - cee you later
+    - good bye
+    - good day
+    - see you later
     - good night
     - bye
     - goodbye
@@ -39,6 +47,9 @@ nlu:
     - of course
     - that sounds good
     - correct
+    - good
+    - ok
+    - okay
 
 - intent: deny
   examples: |
@@ -87,6 +98,67 @@ nlu:
 - intent: bot_challenge
   examples: |
     - are you a bot?
+    - what is your name?
+    - can you tell me your name?
+    - your name please?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+    - who are you?
+
+- intent: thanks
+  examples: |
+    - thank you
+    - thanks
+    - thank you so much
+    - thank you very much
+    - thx
+
+
+- intent: hotel_locations
+  examples: |
+    - i want to eat
+    - am looking for hotels
+    - am looking for restaurants
+    - where is the nearby restaurant
+    - where can i find some fast foods
+    - i need food
+    - i need some drinks
+
+- intent: tourist_locations
+  examples: |
+    - i want to see museum
+    - am looking for zoo
+    - am looking for parks
+    - are there nearby tourist areas?
+    - where is the nearby tourist attraction place?
+    - where can i find museums
+    - i need to see some interesting sites
+    - i need to visit attractive places
+
+- intent: work_greet
+  examples: |
+    - what are you doing now?
+    - what do you do?
+    - what is your job?
+    - can you help me?
+    - how can you help?
+    - what do you provide?
+    - what do you give?
+
+- intent: unknown
+  examples: |
+    - where do you live?
+    - can i ask you out?
+    - do you have a biy friend?
+    - can i call you sometime?
+    - what is your number?
+    - I want to sleep.
+    - I need to go home.
+    - I want to die.
+    - I love you.
+
+
+
+
+
