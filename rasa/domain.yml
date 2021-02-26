@@ -13,7 +13,8 @@ intents:
   - hotel_locations
   - tourist_locations 
   - work_greet
-  - unknown
+  - out_of_scope
+  - nlu_fallback
 
 responses:
   utter_greet:
@@ -56,10 +57,11 @@ responses:
   utter_awesome:
   - text: "Awesome."
 
-  utter_unknown_sorry:
-  - text: "I'm sorry I can't help you with that."
+  utter_out_of_scope:
+  - text: Sorry, I can't handle that request.
 
-
+  utter_please_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
 
 session_config:
   session_expiration_time: 80

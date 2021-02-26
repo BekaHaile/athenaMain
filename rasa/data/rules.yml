@@ -44,10 +44,10 @@ rules:
   - action: utter_sorry
 
 
-- rule: Say I can't help you anytime the user says unknown
+- rule: out-of-scope
   steps:
-  - intent: unknown
-  - action: utter_unknown_sorry
+  - intent: out_of_scope
+  - action: utter_out_of_scope
 
 - rule: Say awesome anytime the user says ok
   steps:
@@ -59,4 +59,8 @@ rules:
   - intent: greet
   - action: utter_greet
 
+- rule: Ask the user to rephrase whenever they send a message with low NLU confidence
+  steps:
+  - intent: nlu_fallback
+  - action: utter_please_rephrase
 
