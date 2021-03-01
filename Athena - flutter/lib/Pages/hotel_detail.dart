@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qr_flutter/qr_flutter.dart';
 
 class HotelDetailsPage extends StatelessWidget {
   static final String path = "lib/src/pages/hotel/details.dart";
@@ -173,10 +174,15 @@ class HotelDetailsPage extends StatelessWidget {
                         child: SizedBox(
                           width: 200,
                           height: 200,
-                          child: Image.network(
-                            "https://imgssl.constantcontact.com/kb/qr-code-standard-example.png",
-                            fit: BoxFit.fill,
+                          child: QrImage(
+                            data: data['location'],
+                            version: QrVersions.auto,
+                            size: 200.0,
                           ),
+                          // Image.network(
+                          //   "https://imgssl.constantcontact.com/kb/qr-code-standard-example.png",
+                          //   fit: BoxFit.fill,
+                          // ),
                         ),
                       )
                     ],
