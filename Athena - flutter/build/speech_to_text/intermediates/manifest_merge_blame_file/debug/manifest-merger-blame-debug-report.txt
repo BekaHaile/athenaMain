@@ -3,6 +3,10 @@
 3    package="com.csdcorp.speech_to_text" >
 4
 5    <uses-sdk android:minSdkVersion="21" />
+<<<<<<< HEAD
 5-->C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub.dartlang.org\speech_to_text-3.1.0\android\src\main\AndroidManifest.xml
+=======
+5-->C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\speech_to_text-3.1.0\android\src\main\AndroidManifest.xml
+>>>>>>> f8d9281b382107d7f5ef2e4531063eefc68f88f1
 6
 7</manifest>

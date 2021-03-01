@@ -7,7 +7,56 @@ rules:
   - intent: goodbye
   - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
+- rule: Say 'I am athena' anytime the user challenges
   steps:
   - intent: bot_challenge
-  - action: utter_iamabot
+  - action: utter_iamathena
+
+
+- rule: Say you're welcome anytime the user says thanks
+  steps:
+  - intent: thanks
+  - action: utter_welcome
+
+- rule: Say I'm fine anytime the user says futher_greet
+  steps:
+  - intent: further_greet
+  - action: utter_fine
+
+- rule: Say here is the list anytime the user says hotel_locations
+  steps:
+  - intent: hotel_locations
+  - action: utter_hotels
+
+- rule: Say here is the list anytime the user says tourist_locations
+  steps:
+  - intent: tourist_locations
+  - action: utter_tourists
+
+- rule: Say I provide information anytime the user says work_greet
+  steps:
+  - intent: work_greet
+  - action: utter_service
+
+- rule: Say sorry anytime the user says deny
+  steps:
+  - intent: deny
+  - action: utter_sorry
+
+
+- rule: Say I can't help you anytime the user says unknown
+  steps:
+  - intent: unknown
+  - action: utter_unknown_sorry
+
+- rule: Say awesome anytime the user says ok
+  steps:
+  - intent: affirm
+  - action: utter_awesome
+
+- rule: Say hello anytime the user says hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+

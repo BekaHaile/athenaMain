@@ -1,13 +1,31 @@
+<<<<<<< HEAD
 #Fri Feb 26 14:32:42 EAT 2021
 path.3=classes_1.dex
 path.2=classes_0.dex
 path.1=classes.dex
+=======
+#Thu Feb 25 17:38:04 EAT 2021
+path.3=classes_1.dex
+path.2=classes_0.dex
+path.1=classes.dex
+renamed.4=classes5.dex
+>>>>>>> f8d9281b382107d7f5ef2e4531063eefc68f88f1
 path.0=classes.dex
 renamed.3=classes4.dex
 renamed.2=classes3.dex
 renamed.1=classes2.dex
+<<<<<<< HEAD
 renamed.0=classes.dex
 base.3=C\:\\Users\\Bebeto\\Music\\athena\\Athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_1.dex
 base.2=C\:\\Users\\Bebeto\\Music\\athena\\Athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
 base.1=C\:\\Users\\Bebeto\\Music\\athena\\Athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
 base.0=C\:\\Users\\Bebeto\\Music\\athena\\Athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+=======
+base.4=C\:\\Users\\user\\Documents\\athena\\athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_2.dex
+renamed.0=classes.dex
+base.3=C\:\\Users\\user\\Documents\\athena\\athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_1.dex
+base.2=C\:\\Users\\user\\Documents\\athena\\athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeLibDexDebug\\out\\classes_0.dex
+base.1=C\:\\Users\\user\\Documents\\athena\\athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.0=C\:\\Users\\user\\Documents\\athena\\athena - flutter\\build\\app\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+path.4=classes_2.dex
+>>>>>>> f8d9281b382107d7f5ef2e4531063eefc68f88f1

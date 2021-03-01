@@ -6,6 +6,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
+import 'package:wakelock/wakelock.dart';
 
 class ChatDetailPage extends StatefulWidget {
   @override
@@ -36,6 +37,14 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
 
     initializeTts();
     _speech = stt.SpeechToText();
+    Wakelock.enable();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    Wakelock.disable();
   }
 
   void initializeTts() async {
@@ -51,6 +60,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
         .then((value) {
       setState(() {
         _isTalking = false;
+        _listen();
       });
     });
   }
@@ -149,6 +159,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
         ChatMessage(message: text, type: MessageType.Sender);
     setState(() {
       chatMessage.insert(0, newMessage);
+      _isTalking = true;
     });
 
     dynamic data = {"message": text, "sender": "id344"};
@@ -161,9 +172,24 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       chatMessage.insert(0, replyMessage);
     });
     await flutterTts.speak(reply).then((value) {
-      Future.delayed(const Duration(seconds: 2), () {
-        _listen();
+      Future.delayed(const Duration(seconds: 1), () {
+        if (reply == "Here is a list of nearby restaurants.")
+          Navigator.pushNamed(context, "/hotelList",
+              arguments: {"type": "restaurant"});
+        else if (reply ==
+            "Here are some tourist locations you might be interested in.")
+          Navigator.pushNamed(context, "/hotelList",
+              arguments: {"type": "locations"});
+        else if (reply == "Bye")
+          print("bye");
+        else
+          _listen();
+        _isTalking = false;
       });
+      if (reply == "Bye")
+        setState(() {
+          _isTalking = false;
+        });
     });
   }
 }

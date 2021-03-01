@@ -1,10 +1,17 @@
 {
     "logs": [
         {
+<<<<<<< HEAD
             "outputFile": "C:\\Users\\Bebeto\\Music\\athena\\Athena - flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Bebeto\\.gradle\\caches\\transforms-2\\files-2.1\\a528b13ac93e64cafa3d0480e2c93207\\core-1.1.0\\res\\values-az\\values-az.xml",
+=======
+            "outputFile": "C:\\Users\\user\\Documents\\athena\\athena - flutter\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-az\\values-az.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\user\\.gradle\\caches\\transforms-2\\files-2.1\\a528b13ac93e64cafa3d0480e2c93207\\core-1.1.0\\res\\values-az\\values-az.xml",
+>>>>>>> f8d9281b382107d7f5ef2e4531063eefc68f88f1
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

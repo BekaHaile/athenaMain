@@ -1,5 +1,6 @@
 -- Merging decision tree log ---
 manifest
+<<<<<<< HEAD
 ADDED from C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:1:1-4:12
 INJECTED from C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:1:1-4:12
 INJECTED from C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:1:1-4:12
@@ -23,3 +24,28 @@ INJECTED from C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub
 		INJECTED from C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
 		ADDED from C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Bebeto\Downloads\Compressed\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+=======
+ADDED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:1:1-4:12
+INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:1:1-4:12
+INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:1:1-4:12
+	package
+		ADDED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:2:3-38
+		INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml:1:11-69
+uses-sdk
+INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+		ADDED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+		ADDED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\user\Documents\flutter\.pub-cache\hosted\pub.dartlang.org\flutter_tts-2.0.0\android\src\main\AndroidManifest.xml
+>>>>>>> f8d9281b382107d7f5ef2e4531063eefc68f88f1
