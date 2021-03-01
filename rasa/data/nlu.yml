@@ -146,7 +146,7 @@ nlu:
     - what do you provide?
     - what do you give?
 
-- intent: unknown
+- intent: out_of_scope
   examples: |
     - where do you live?
     - can i ask you out?
@@ -157,6 +157,9 @@ nlu:
     - I need to go home.
     - I want to die.
     - I love you.
+    - what is 1+1?
+    - who is the prime minister of Ethiopia?
+
 
 
 
