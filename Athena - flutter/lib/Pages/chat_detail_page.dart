@@ -180,11 +180,19 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
             "Here are some tourist locations you might be interested in.")
           Navigator.pushNamed(context, "/hotelList",
               arguments: {"type": "locations"});
+        else if (reply == "Here is the folio of your stay.")
+          Navigator.pushNamed(
+            context,
+            "/folio",
+          );
         else if (reply == "Bye")
           print("bye");
         else
           _listen();
-        _isTalking = false;
+      }).then((value) {
+        setState(() {
+          _isTalking = false;
+        });
       });
       if (reply == "Bye")
         setState(() {

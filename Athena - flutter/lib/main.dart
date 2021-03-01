@@ -1,5 +1,6 @@
 import 'package:athena_2/Pages/athena_home.dart';
 import 'package:athena_2/Pages/chat_detail_page.dart';
+import 'package:athena_2/Pages/folio.dart';
 import 'package:athena_2/Pages/hotel_detail.dart';
 import 'package:athena_2/Pages/hotel_list.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         home: AthenaHome(),
         routes: {
           '/chatDetail': (BuildContext context) => ChatDetailPage(),
+          '/folio': (BuildContext context) => Folio(),
         },
         onGenerateRoute: (RouteSettings settings) {
           final requests = settings.arguments;
