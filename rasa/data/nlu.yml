@@ -1,167 +1,163 @@
-version: "2.0"
+version: '2.0'
 
 nlu:
-- intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
 
-- intent: further_greet
-  examples: |
-    - how are you?
-    - are you ok?
-    - are you well?
-    - is everything ok with you?
+  - intent: further_greet
+    examples: |
+      - how are you?
+      - are you ok?
+      - are you well?
+      - is everything ok with you?
 
-- intent: goodbye
-  examples: |
-    - good afternoon
-    - cu
-    - good bye
-    - good day
-    - see you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
+  - intent: goodbye
+    examples: |
+      - good afternoon
+      - cu
+      - good bye
+      - good day
+      - see you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-    - good
-    - ok
-    - okay
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - good
+      - ok
+      - okay
 
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
 
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
 
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremly sad
+      - so saad
+      - so sad
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - what is your name?
-    - can you tell me your name?
-    - your name please?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-    - who are you?
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - what is your name?
+      - can you tell me your name?
+      - your name please?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - who are you?
 
-- intent: thanks
-  examples: |
-    - thank you
-    - thanks
-    - thank you so much
-    - thank you very much
-    - thx
+  - intent: thanks
+    examples: |
+      - thank you
+      - thanks
+      - thank you so much
+      - thank you very much
+      - thx
 
+  - intent: hotel_locations
+    examples: |
+      - i want to eat
+      - am looking for hotels
+      - am looking for restaurants
+      - where is the nearby restaurant
+      - where can i find some fast foods
+      - i need food
+      - i need some drinks
+      - any good place to drinks
+      - are there any bars around here
 
-- intent: hotel_locations
-  examples: |
-    - i want to eat
-    - am looking for hotels
-    - am looking for restaurants
-    - where is the nearby restaurant
-    - where can i find some fast foods
-    - i need food
-    - i need some drinks
+  - intent: tourist_locations
+    examples: |
+      - i want to see museum
+      - am looking for zoo
+      - am looking for parks
+      - are there nearby tourist areas?
+      - where is the nearby tourist attraction place?
+      - where can i find museums
+      - i need to see some interesting sites
+      - i need to visit attractive places
+      - are there historical places around here?
 
-- intent: tourist_locations
-  examples: |
-    - i want to see museum
-    - am looking for zoo
-    - am looking for parks
-    - are there nearby tourist areas?
-    - where is the nearby tourist attraction place?
-    - where can i find museums
-    - i need to see some interesting sites
-    - i need to visit attractive places
+  - intent: work_greet
+    examples: |
+      - what are you doing now?
+      - what do you do?
+      - what is your job?
+      - can you help me?
+      - how can you help?
+      - what do you provide?
+      - what do you give?
 
-- intent: work_greet
-  examples: |
-    - what are you doing now?
-    - what do you do?
-    - what is your job?
-    - can you help me?
-    - how can you help?
-    - what do you provide?
-    - what do you give?
-
-- intent: out_of_scope
-  examples: |
-    - where do you live?
-    - can i ask you out?
-    - do you have a biy friend?
-    - can i call you sometime?
-    - what is your number?
-    - I want to sleep.
-    - I need to go home.
-    - I want to die.
-    - I love you.
-    - what is 1+1?
-    - who is the prime minister of Ethiopia?
-
-
-
-
-
-
+  - intent: out_of_scope
+    examples: |
+      - where do you live?
+      - can i ask you out?
+      - do you have a biy friend?
+      - can i call you sometime?
+      - what is your number?
+      - I want to sleep.
+      - I need to go home.
+      - I want to die.
+      - I love you.
+      - what is 1+1?
+      - who is the prime minister of Ethiopia?
