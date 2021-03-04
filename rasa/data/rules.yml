@@ -50,3 +50,18 @@ rules:
     steps:
       - intent: nlu_fallback
       - action: utter_please_rephrase
+
+  - rule: Ask the user if sad
+    steps:
+      - intent: mood_unhappy
+      - action: utter_sorry
+
+  - rule: Say here is the list anytime the user says hotel_locations
+    steps:
+      - intent: hotel_locations
+      - action: utter_hotels
+
+  - rule: Say here is the list anytime the user says tourist_locations
+    steps:
+      - intent: tourist_locations
+      - action: utter_tourists
