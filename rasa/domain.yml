@@ -1,4 +1,4 @@
-version: "2.0"
+version: '2.0'
 
 intents:
   - greet
@@ -11,57 +11,57 @@ intents:
   - thanks
   - further_greet
   - hotel_locations
-  - tourist_locations 
+  - tourist_locations
   - work_greet
   - out_of_scope
   - nlu_fallback
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: 'Hey! How are you?'
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: 'Here is something to cheer you up:'
+      image: 'https://i.imgur.com/nGF1K8f.jpg'
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: 'Did that help you?'
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: 'Great, carry on!'
 
   utter_goodbye:
-  - text: "Bye"
+    - text: 'Bye'
 
   utter_iamathena:
-  - text: "I am Athena."
+    - text: 'I am Athena.'
 
   utter_welcome:
-  - text: "You're most welcome."
+    - text: "You're most welcome."
 
   utter_fine:
-  - text: "I'm fine, thank you for asking."
+    - text: "I'm fine, thank you for asking."
 
   utter_hotels:
-  - text: "Here is a list of nearby restaurants."
+    - text: 'Here is a list of nearby restaurants.'
 
   utter_tourists:
-  - text: "Here are some tourist locations you might be interested in."
+    - text: 'Here are some tourist locations you might be interested in.'
 
   utter_service:
-  - text: "I provide required information."
+    - text: 'I provide required information.'
 
   utter_sorry:
-  - text: "Sorry about that."
+    - text: 'Sorry about that.'
 
   utter_awesome:
-  - text: "Awesome."
+    - text: 'Awesome.'
 
   utter_out_of_scope:
-  - text: Sorry, I can't handle that request.
+    - text: Sorry, I can't handle that request.
 
   utter_please_rephrase:
-  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
 
 session_config:
   session_expiration_time: 80
