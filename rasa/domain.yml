@@ -15,6 +15,8 @@ intents:
   - work_greet
   - out_of_scope
   - nlu_fallback
+  - folio
+  - sorry
 
 responses:
   utter_greet:
@@ -53,13 +55,15 @@ responses:
     - text: "I'm fine, thank you for asking."
 
   utter_hotels:
-    - text: 'Here is a list of nearby restaurants.'
+    - text: 'The location you are in is Hilton Hotel in Addis Ababa, so here are the recommended restaurants near you.'
 
   utter_tourists:
     - text: 'Here are some tourist locations you might be interested in.'
 
   utter_service:
-    - text: 'I provide required information.'
+    - text: 'I can provide you with a list of recommended area restaurants;
+	            Get you directions to the most frequently requested locations; and
+	            Get you a copy of the folio for your stay.'
 
   utter_sorry:
     - text: 'Sorry about that.'
@@ -73,6 +77,14 @@ responses:
 
   utter_please_rephrase:
     - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
+
+
+  utter_folio:
+    - text: "Here is the folio of your stay."
+
+
+  utter_okay:
+    - text: "It's okay."
 
 session_config:
   session_expiration_time: 80

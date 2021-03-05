@@ -65,3 +65,14 @@ rules:
     steps:
       - intent: tourist_locations
       - action: utter_tourists
+
+  - rule: asking for folio
+    steps:
+      - intent: folio
+      - action: utter_folio
+
+  - rule: sorry
+    steps:
+      - intent: sorry
+      - action: utter_okay
+
