@@ -13,3 +13,25 @@ stories:
       - action: utter_greet
       - intent: tourist_locations
       - action: utter_tourists
+
+  - story: conversation 3
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: further_greet
+      - action: utter_fine
+      - intent: tourist_locations
+      - action: utter_tourists
+      - intent: hotel_locations
+      - action: utter_hotels
+
+  - story: conversation 4
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: further_greet
+      - action: utter_fine
+      - intent: hotel_locations
+      - action: utter_hotels
+      - intent: tourist_locations
+      - action: utter_tourists

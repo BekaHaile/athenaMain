@@ -19,6 +19,11 @@ intents:
 responses:
   utter_greet:
     - text: 'Hey! How are you?'
+    - text: 'Hey'
+    - text: 'Hello'
+    - text: 'Hi'
+    - text: 'Hello there!'
+    - text: 'Hallo!'
 
   utter_cheer_up:
     - text: 'Here is something to cheer you up:'
@@ -32,9 +37,14 @@ responses:
 
   utter_goodbye:
     - text: 'Bye'
+    - text: 'Goodbye'
+    - text: 'Have a nice day!'
+    - text: 'See you around'
+    - text: 'Bye bye'
+    - text: 'See you later'
 
   utter_iamathena:
-    - text: 'I am Athena.'
+    - text: 'I am Athena. Your virtual assistant.'
 
   utter_welcome:
     - text: "You're most welcome."
@@ -58,10 +68,11 @@ responses:
     - text: 'Awesome.'
 
   utter_out_of_scope:
-    - text: Sorry, I can't handle that request.
+    - text: "Sorry, I can't handle that request."
+    - text: "Sorry, I'm not sure how to respond to that. Say 'help' for assistance."
 
   utter_please_rephrase:
-    - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+    - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
 
 session_config:
   session_expiration_time: 80
