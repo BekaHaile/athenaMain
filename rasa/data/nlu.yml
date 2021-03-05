@@ -113,6 +113,9 @@ nlu:
       - thank you so much
       - thank you very much
       - thx
+      - okay great thanks
+      - sure thanks
+      - thanks
 
   - intent: hotel_locations
     examples: |
@@ -125,6 +128,20 @@ nlu:
       - i need some drinks
       - any good place to drinks
       - are there any bars around here
+      - where is a good place for lunch?
+      - i'm looking for a place to eat
+      - I want to grab lunch
+      - I am searching for a dinner spot
+      - I am looking for some restaurants in Addis Ababa
+      - show me chinese restaurants
+      - show me chines restaurants in Addis Ababa
+      - show me a mexican place in the centre
+      - i am looking for an indian spot
+      - search for restaurants
+      - I am looking for some American restaurants in Addis Ababa
+      - I am looking for some restaurants in Addis Ababa
+      - please help me to find restaurants in Addis Ababa
+      - where is a good place for dinner?
 
   - intent: tourist_locations
     examples: |
