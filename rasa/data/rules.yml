@@ -65,3 +65,22 @@ rules:
     steps:
       - intent: tourist_locations
       - action: utter_tourists
+
+  - rule: Active form
+    steps:
+      - intent: checkout
+      - action: user_details_form
+      - active_loop: user_details_form
+
+  - rule: Submit form
+    condition:
+      # condition that form is active.
+      - active_loop: user_details_form
+    steps:
+      # Form is deactivated
+      - action: user_details_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_submit

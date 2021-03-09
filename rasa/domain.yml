@@ -11,10 +11,39 @@ intents:
   - thanks
   - further_greet
   - hotel_locations
+    # use_entities:
+    #   - rest_loc
   - tourist_locations
+    # use_entities:
+    #   - tour_loc
   - work_greet
   - out_of_scope
   - nlu_fallback
+  - checkout
+  - my_passport:
+      use_entities:
+        - passport
+  - my_email:
+      use_entities:
+        - email
+
+entities:
+  - passport
+  - email
+slots:
+  passport:
+    type: text
+  email:
+    type: text
+
+# entities:
+#   - rest_loc
+#   - tour_loc
+# slots:
+#   rest_loc:
+#     type: text
+#   tour_loc:
+#     type: text
 
 responses:
   utter_greet:
@@ -59,13 +88,25 @@ responses:
     - text: 'Here are some tourist locations you might be interested in.'
 
   utter_service:
-    - text: 'I provide required information.'
+    - text: "I can provide you list of recommended area restaurants \nI can get you directions to the most frequently requested locations \nI can get you a copy of the folio for your stay"
 
   utter_sorry:
     - text: 'Sorry about that.'
 
   utter_awesome:
     - text: 'Awesome.'
+
+  utter_ask_passport:
+    - text: Please enter your passport number.
+
+  utter_ask_email:
+    - text: Please enter your email address.
+
+  utter_thanks:
+    - text: Thanks for providing the values.
+
+  utter_details_thanks:
+    - text: "Thank you for providing your details \nPassport: {Passport}, \nEmail: {Email} \nThe copy of the folio for your stay has been sent to the email address {Email}. \nWe are looking forward to see you again!"
 
   utter_out_of_scope:
     - text: "Sorry, I can't handle that request."
@@ -74,6 +115,17 @@ responses:
   utter_please_rephrase:
     - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
 
+actions:
+  - action_submit
+
+forms:
+  user_details_form:
+    passport:
+      - type: from_entity
+        entity: passport
+    email:
+      - type: from_entity
+        entity: email
 session_config:
   session_expiration_time: 80
   carry_over_slots_to_new_session: true
