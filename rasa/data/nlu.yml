@@ -223,3 +223,24 @@ nlu:
       - I love you.
       - what is 1+1?
       - who is the prime minister of Ethiopia?
+
+  - intent: folio
+    examples: |
+      - folio please
+      - Can I get a folio of my stay?
+      - I need to know the bill for my stay
+      - duration of stay
+      - where is my folio
+      - can you provide me the folio?
+      - could you give me my bill
+      - please give me my folio
+
+
+  - intent: sorry
+    examples: |
+      - am sorry
+      - sorry
+      - I am very sorry
+      - sorry to bother you
+      - I'm terribly sorry
+

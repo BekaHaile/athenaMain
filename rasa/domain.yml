@@ -26,6 +26,8 @@ intents:
   - my_email:
       use_entities:
         - email
+  - folio
+  - sorry
 
 entities:
   - passport
@@ -82,7 +84,7 @@ responses:
     - text: "I'm fine, thank you for asking."
 
   utter_hotels:
-    - text: 'Here is a list of nearby restaurants.'
+    - text: 'The location you are in is Hilton Hotel in Addis Ababa, so here are the recommended restaurants near you.'
 
   utter_tourists:
     - text: 'Here are some tourist locations you might be interested in.'
@@ -115,6 +117,12 @@ responses:
   utter_please_rephrase:
     - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
 
+  utter_folio:
+    - text: 'Here is the folio of your stay.'
+
+  utter_okay:
+    - text: "It's okay."
+
 actions:
   - action_submit
 
@@ -126,6 +134,7 @@ forms:
     email:
       - type: from_entity
         entity: email
+
 session_config:
   session_expiration_time: 80
   carry_over_slots_to_new_session: true

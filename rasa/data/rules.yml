@@ -84,3 +84,12 @@ rules:
           - requested_slot: null
       # The actions we want to run when the form is submitted.
       - action: action_submit
+  - rule: asking for folio
+    steps:
+      - intent: folio
+      - action: utter_folio
+
+  - rule: sorry
+    steps:
+      - intent: sorry
+      - action: utter_okay
