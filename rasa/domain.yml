@@ -19,7 +19,6 @@ intents:
   - work_greet
   - out_of_scope
   - nlu_fallback
-  - checkout
   - my_passport:
       use_entities:
         - passport
@@ -116,9 +115,6 @@ responses:
 
   utter_please_rephrase:
     - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
-
-  utter_folio:
-    - text: 'Here is the folio of your stay.'
 
   utter_okay:
     - text: "It's okay."

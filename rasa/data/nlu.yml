@@ -189,12 +189,6 @@ nlu:
       - what do you provide?
       - what do you give?
 
-  - intent: checkout
-    examples: |
-      - I want to checkout
-      - how do i checkout?
-      - I am checking out.
-
   - intent: my_passport
     examples: |
       - My passport is [0937949501]{"entity":"passport","value":"0937949501"}
@@ -234,7 +228,9 @@ nlu:
       - can you provide me the folio?
       - could you give me my bill
       - please give me my folio
-
+      - I want to checkout
+      - how do i checkout?
+      - I am checking out.
 
   - intent: sorry
     examples: |
@@ -243,4 +239,3 @@ nlu:
       - I am very sorry
       - sorry to bother you
       - I'm terribly sorry
-
