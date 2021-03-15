@@ -55,79 +55,79 @@ slots:
 
 responses:
   utter_greet:
-    - text: 'Hey! How are you?'
-    - text: 'Hey'
-    - text: 'Hello'
-    - text: 'Hi'
-    - text: 'Hello there!'
-    - text: 'Hallo!'
+    - text: 'Hey! How are you? /0000'
+    - text: 'Hey /0000'
+    - text: 'Hello /0000'
+    - text: 'Hi /0000'
+    - text: 'Hello there! /0000'
+    - text: 'Hallo! /0000'
 
   utter_cheer_up:
-    - text: 'Here is something to cheer you up:'
+    - text: 'Here is something to cheer you up: /0000'
       image: 'https://i.imgur.com/nGF1K8f.jpg'
 
   utter_did_that_help:
-    - text: 'Did that help you?'
+    - text: 'Did that help you? /0000'
 
   utter_happy:
-    - text: 'Great, carry on!'
+    - text: 'Great, carry on! /0000'
 
   utter_goodbye:
-    - text: 'Bye'
-    - text: 'Goodbye'
-    - text: 'Have a nice day!'
-    - text: 'See you around'
-    - text: 'Bye bye'
-    - text: 'See you later'
+    - text: 'Bye /0000'
+    - text: 'Goodbye /0000'
+    - text: 'Have a nice day! /0000'
+    - text: 'See you around /0000'
+    - text: 'Bye bye /0000'
+    - text: 'See you later /0000'
 
   utter_iamathena:
-    - text: 'I am Athena. Your virtual assistant.'
+    - text: 'I am Athena. Your virtual assistant. /0000'
 
   utter_welcome:
-    - text: "You're most welcome."
+    - text: "You're most welcome. /0000"
 
   utter_fine:
-    - text: "I'm fine, thank you for asking."
+    - text: "I'm fine, thank you for asking. /0000"
 
   utter_hotels:
-    - text: 'The location you are in is Hilton Hotel in Addis Ababa, so here are the recommended restaurants near you.'
+    - text: 'The location you are in is Hilton Hotel in Addis Ababa, so here are the recommended restaurants near you. /0001'
 
   utter_tourists:
-    - text: 'Here are some tourist locations you might be interested in.'
+    - text: 'Here are some tourist locations you might be interested in. /0002'
 
   utter_service:
-    - text: "I can provide you list of recommended area restaurants \nI can get you directions to the most frequently requested locations \nI can get you a copy of the folio for your stay"
+    - text: "I can provide you list of recommended area restaurants \nI can get you directions to the most frequently requested locations \nI can get you a copy of the folio for your stay /0003"
 
   utter_sorry:
-    - text: 'Sorry about that.'
+    - text: 'Sorry about that. /0000'
 
   utter_awesome:
-    - text: 'Awesome.'
+    - text: 'Awesome. /0000'
 
   utter_ask_passport:
-    - text: Please enter your passport number.
+    - text: Please enter your passport number. /0004
 
   utter_ask_email:
-    - text: Please enter your email address.
+    - text: Please enter your email address. /0005
 
   utter_thanks:
-    - text: Thanks for providing the values.
+    - text: Thanks for providing the values. /0000
 
   utter_details_thanks:
-    - text: "Thank you for providing your details \nPassport: {Passport}, \nEmail: {Email} \nThe copy of the folio for your stay has been sent to the email address {Email}. \nWe are looking forward to see you again!"
+    - text: "Thank you for providing your details \nPassport: {Passport}, \nEmail: {Email} \nThe copy of the folio for your stay has been sent to the email address {Email}. \nWe are looking forward to see you again! /0003"
 
   utter_out_of_scope:
-    - text: "Sorry, I can't handle that request."
-    - text: "Sorry, I'm not sure how to respond to that. Say 'help' for assistance."
+    - text: "Sorry, I can't handle that request. /0000"
+    - text: "Sorry, I'm not sure how to respond to that. Say 'help' for assistance. /0000"
 
   utter_please_rephrase:
-    - text: "I'm sorry, I didn't quite understand that. Could you rephrase?"
+    - text: "I'm sorry, I didn't quite understand that. Could you rephrase? /0000"
 
   utter_okay:
-    - text: "It's okay."
+    - text: "It's okay. /0000"
 
   utter_ask_emaill:
-    - text: 'please provide the emaill address'
+    - text: 'please provide the emaill address /0005'
 
   # utter_ask_subject:
   #   - text: 'please provide the subject'
