@@ -188,6 +188,7 @@ nlu:
       - how can you help?
       - what do you provide?
       - what do you give?
+      - Can I ask you a question?
 
   - intent: my_passport
     examples: |
@@ -239,3 +240,10 @@ nlu:
       - I am very sorry
       - sorry to bother you
       - I'm terribly sorry
+
+  - intent: send_email
+    examples: |
+      - I want to send email
+      - send an email
+      - send email
+      - email

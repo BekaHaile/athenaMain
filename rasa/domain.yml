@@ -27,6 +27,7 @@ intents:
         - email
   - folio
   - sorry
+  - send_email
 
 entities:
   - passport
@@ -36,6 +37,12 @@ slots:
     type: text
   email:
     type: text
+  emaill:
+    type: text
+  # subject:
+  #   type: text
+  # message:
+  #   type: text
 
 # entities:
 #   - rest_loc
@@ -119,10 +126,27 @@ responses:
   utter_okay:
     - text: "It's okay."
 
+  utter_ask_emaill:
+    - text: 'please provide the emaill address'
+
+  # utter_ask_subject:
+  #   - text: 'please provide the subject'
+
+  # utter_ask_message:
+  #   - text: 'please provide the message'
+
 actions:
   - action_submit
+  - action_submit_email
 
 forms:
+  email_form:
+    emaill:
+      - type: from_text
+    passport:
+      - type: from_text
+    # message:
+    #   - type: from_text
   user_details_form:
     passport:
       - type: from_entity
