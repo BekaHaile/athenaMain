@@ -31,11 +31,6 @@ rules:
       - intent: deny
       - action: utter_sorry
 
-  - rule: out-of-scope
-    steps:
-      - intent: out_of_scope
-      - action: utter_out_of_scope
-
   - rule: Say awesome anytime the user says ok
     steps:
       - intent: affirm
@@ -49,7 +44,7 @@ rules:
   - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
     steps:
       - intent: nlu_fallback
-      - action: utter_please_rephrase
+      - action: utter_out_of_scope
 
   - rule: Ask the user if sad
     steps:
@@ -68,7 +63,7 @@ rules:
 
   - rule: Active form
     steps:
-      - intent: folio
+      - intent: send_email
       - action: user_details_form
       - active_loop: user_details_form
 
@@ -89,3 +84,22 @@ rules:
     steps:
       - intent: sorry
       - action: utter_okay
+
+  - rule: Active email form
+    steps:
+      - intent: folio
+      - action: email_form
+      - active_loop: email_form
+
+  - rule: Submit form
+    condition:
+      # condition that form is active.
+      - active_loop: email_form
+    steps:
+      # Form is deactivated
+      - action: email_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      # The actions we want to run when the form is submitted.
+      - action: action_submit_email
