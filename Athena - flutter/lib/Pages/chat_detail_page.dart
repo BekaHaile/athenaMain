@@ -163,7 +163,10 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     });
 
     dynamic data = {"message": text, "sender": "id344"};
-    dynamic reply = await API().postData(data);
+    dynamic replyApi = await API().postData(data);
+    dynamic responseList = replyApi.split('/');
+    String reply = responseList[0];
+    String type = responseList[1];
 
     ChatMessage replyMessage =
         ChatMessage(message: reply, type: MessageType.Receiver);
@@ -173,19 +176,24 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     });
     await flutterTts.speak(reply).then((value) {
       Future.delayed(const Duration(seconds: 1), () {
-        if (reply == "Here is a list of nearby restaurants.")
+        if (type == '0001')
           Navigator.pushNamed(context, "/hotelList",
               arguments: {"type": "restaurant"});
-        else if (reply ==
-            "Here are some tourist locations you might be interested in.")
+        else if (type == '0002')
           Navigator.pushNamed(context, "/hotelList",
               arguments: {"type": "locations"});
-        else if (reply == "Here is the folio of your stay.")
+        else if (type == '0003')
           Navigator.pushNamed(
             context,
             "/folio",
           );
-        else if (reply == "Bye")
+        else if (type == '0005')
+          showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return _emailDialogue(context);
+              });
+        else if (type == '0000' && reply == "Bye")
           print("bye");
         else
           _listen();
@@ -199,5 +207,34 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
           _isTalking = false;
         });
     });
+  }
+
+  Widget _emailDialogue(context) {
+    TextEditingController textEditingController = TextEditingController();
+    return AlertDialog(
+      title: Text('Please insert your email address below'),
+      content: Container(
+        child: TextField(
+          decoration: InputDecoration(hintText: "email"),
+          controller: textEditingController,
+        ),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          child: Text('Cancel'),
+        ),
+        TextButton(
+          onPressed: () {
+            print(textEditingController.text);
+            sendSms(textEditingController.text);
+            Navigator.pop(context);
+          },
+          child: Text('Submit'),
+        ),
+      ],
+    );
   }
 }
