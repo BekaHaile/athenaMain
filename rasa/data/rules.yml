@@ -103,3 +103,4 @@ rules:
           - requested_slot: null
       # The actions we want to run when the form is submitted.
       - action: action_submit_email
+      - action: action_restart
