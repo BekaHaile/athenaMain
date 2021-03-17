@@ -143,12 +143,15 @@ class Lists extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text(
-                        item.title,
-                        style: TextStyle(
-                            color: Colors.deepOrange,
-                            fontWeight: FontWeight.w700,
-                            fontSize: 17),
+                      Container(
+                        width: MediaQuery.of(context).size.width * 0.6,
+                        child: Text(
+                          item.title,
+                          style: TextStyle(
+                              color: Colors.deepOrange,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 17),
+                        ),
                       ),
                       Text(
                         item.catagory,

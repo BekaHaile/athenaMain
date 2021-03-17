@@ -41,7 +41,6 @@ class _AthenaHomeState extends State<AthenaHome> {
                     style: TextStyle(
                       fontSize: 18,
                     ),
-                    textAlign: TextAlign.justify,
                   ),
                 ),
               )
@@ -55,7 +54,6 @@ class _AthenaHomeState extends State<AthenaHome> {
             style: TextStyle(
               fontSize: 18,
             ),
-            textAlign: TextAlign.justify,
           ),
         ),
         FloatingActionButton(

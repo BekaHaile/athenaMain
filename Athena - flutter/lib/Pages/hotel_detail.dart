@@ -108,43 +108,9 @@ class HotelDetailsPage extends StatelessWidget {
                               ],
                             ),
                           ),
-                          Column(
-                            children: <Widget>[
-                              // Text(
-                              //   "\$ 200",
-                              //   style: TextStyle(
-                              //       color: Colors.purple,
-                              //       fontWeight: FontWeight.bold,
-                              //       fontSize: 20.0),
-                              // ),
-                              // Text(
-                              //   "/per night",
-                              //   style: TextStyle(
-                              //       fontSize: 12.0, color: Colors.grey),
-                              // )
-                            ],
-                          )
                         ],
                       ),
                       const SizedBox(height: 30.0),
-                      // SizedBox(
-                      //   width: double.infinity,
-                      //   child: RaisedButton(
-                      //     shape: RoundedRectangleBorder(
-                      //         borderRadius: BorderRadius.circular(30.0)),
-                      //     color: Colors.purple,
-                      //     textColor: Colors.white,
-                      //     child: Text(
-                      //       "Direction",
-                      //       style: TextStyle(fontWeight: FontWeight.normal),
-                      //     ),
-                      //     padding: const EdgeInsets.symmetric(
-                      //       vertical: 16.0,
-                      //       horizontal: 32.0,
-                      //     ),
-                      //     onPressed: () {},
-                      //   ),
-                      // ),
                       const SizedBox(height: 30.0),
                       Text(
                         "Description".toUpperCase(),
@@ -161,12 +127,6 @@ class HotelDetailsPage extends StatelessWidget {
                             fontSize: 14.0),
                       ),
                       const SizedBox(height: 10.0),
-                      Text(
-                        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione architecto autem quasi nisi iusto eius ex dolorum velit! Atque, veniam! Atque incidunt laudantium eveniet sint quod harum facere numquam molestias?",
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w400, fontSize: 14.0),
-                      ),
                       Padding(
                         padding: EdgeInsets.only(
                             left: MediaQuery.of(context).size.width * 0.2,
@@ -179,10 +139,6 @@ class HotelDetailsPage extends StatelessWidget {
                             version: QrVersions.auto,
                             size: 200.0,
                           ),
-                          // Image.network(
-                          //   "https://imgssl.constantcontact.com/kb/qr-code-standard-example.png",
-                          //   fit: BoxFit.fill,
-                          // ),
                         ),
                       )
                     ],
