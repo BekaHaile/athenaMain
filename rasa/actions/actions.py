@@ -18,39 +18,6 @@ from email.mime.text import MIMEText
 from email.mime.application import MIMEApplication
 
 
-class ValidateCheckoutForm(Action):
-    def name(self) -> Text:
-        return "user_details_form"
-
-    def run(
-        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-    ) -> List[EventType]:
-        required_slots = ["passport", "email"]
-
-        for slot_passport in required_slots:
-            if tracker.slots.get(slot_passport) is None:
-                # The slot is not filled yet. Request the user to fill this slot next.
-                return [SlotSet("requested_slot", slot_passport)]
-
-        # All slots are filled.
-        return [SlotSet("requested_slot", None)]
-
-
-class ActionSubmit(Action):
-    def name(self) -> Text:
-        return "action_submit"
-
-    def run(
-        self,
-        dispatcher,
-        tracker: Tracker,
-        domain: "DomainDict",
-    ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(template="utter_details_thanks",
-                                 Passport=tracker.get_slot("passport"),
-                                 Email=tracker.get_slot("email"))
-
-
 class ActionSubmitEmail(Action):
     def name(self) -> Text:
         return "action_submit_email"
@@ -63,15 +30,15 @@ class ActionSubmitEmail(Action):
     ) -> List[Dict[Text, Any]]:
 
         SendEmail(
-            tracker.get_slot("emaill"),
+            tracker.get_slot("email"),
             tracker.get_slot("passport")
             # tracker.get_slot("message")
         )
         dispatcher.utter_message(
             template="utter_details_thanks",
             Passport=tracker.get_slot("passport"),
-            Email=tracker.get_slot("emaill"))
-        # "Thanks for providing the details. We have sent you a mail at {}".format(tracker.get_slot("emaill")))
+            Email=tracker.get_slot("email"))
+        # "Thanks for providing the details. We have sent you a mail at {}".format(tracker.get_slot("email")))
         return []
 
 
