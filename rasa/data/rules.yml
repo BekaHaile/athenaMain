@@ -26,10 +26,10 @@ rules:
       - intent: work_greet
       - action: utter_service
 
-  - rule: Say sorry anytime the user says deny
+  - rule: Say Ok anytime the user says deny
     steps:
       - intent: deny
-      - action: utter_sorry
+      - action: utter_ok
 
   - rule: Say awesome anytime the user says ok
     steps:
@@ -40,11 +40,6 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
-
-  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
-    steps:
-      - intent: nlu_fallback
-      - action: utter_out_of_scope
 
   - rule: Ask the user if sad
     steps:
@@ -65,6 +60,11 @@ rules:
     steps:
       - intent: sorry
       - action: utter_okay
+
+  - rule: fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
 
   - rule: Active email form
     steps:

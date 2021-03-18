@@ -13,7 +13,6 @@ intents:
   - hotel_locations
   - tourist_locations
   - work_greet
-  - out_of_scope
   - nlu_fallback
   - folio
   - sorry
@@ -73,8 +72,8 @@ responses:
   utter_service:
     - text: "I can provide you list of recommended area restaurants \nI can get you directions to the most frequently requested locations \nI can get you a copy of the folio for your stay /0000"
 
-  utter_sorry:
-    - text: 'Sorry about that. /0000'
+  utter_ok:
+    - text: 'Okay. /0000'
 
   utter_awesome:
     - text: 'Awesome. /0000'
@@ -88,12 +87,13 @@ responses:
   utter_details_thanks:
     - text: "Thank you for providing your details. \nThe copy of the folio for your stay has been sent to the email address {Email}. \nWe are looking forward to see you again! /0003"
 
-  utter_out_of_scope:
+  utter_sorry:
+    - text: "you will be fine. /0000"
+
+  utter_default:
+    - text: "Sorry, Could you please rephrase that? /0000"
     - text: "Sorry, I can't handle that request. /0000"
     - text: "Sorry, I'm not sure how to respond to that. Say 'help' for assistance. /0000"
-
-  utter_please_rephrase:
-    - text: "I'm sorry, I didn't quite understand that. Could you rephrase? /0000"
 
   utter_okay:
     - text: "It's okay. /0000"
