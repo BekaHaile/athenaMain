@@ -42,7 +42,6 @@ nlu:
   - intent: affirm
     examples: |
       - yes
-      - y
       - indeed
       - of course
       - that sounds good
@@ -50,6 +49,8 @@ nlu:
       - good
       - ok
       - okay
+      - ok great
+      - ok good
 
   - intent: deny
     examples: |
@@ -88,7 +89,6 @@ nlu:
       - I'm so sad
       - sad
       - very sad
-      - unhappy
       - not good
       - not very good
       - extremly sad
@@ -116,22 +116,11 @@ nlu:
       - okay great thanks
       - sure thanks
       - thanks
+      - I appreciate it
+      - thanks for the info
+      - highly appreciated
+      - good job
 
-  # - intent: hotel_locations
-  #   examples: |
-  #     - am looking for [hotels] {"entity":"rest_loc","value":"hotels"}
-  #     - am looking for [restaurants] {"entity":"rest_loc","value":"restaurants"}
-  #     - where is the nearby [restaurant] {"entity":"rest_loc","value":"restaurant"}
-  #     - where can i find some [fast foods] {"entity":"rest_loc","value":"fast foods"}
-  #     - are there any [bars] {"entity":"rest_loc","value":"bars"} around here
-  #     - I am looking for some [restaurants] {"entity":"rest_loc","value":"restaurants"} in Addis Ababa
-  #     - show me [chinese restaurants] {"entity":"rest_loc","value":"chinese restaurants"}
-  #     - show me [chinese restaurants] {"entity":"rest_loc","value":"chinese restaurants"} in Addis Ababa
-  #     - show me a [mexican place] {"entity":"rest_loc","value":"mexican place"} in the centre
-  #     - i am looking for an [indian spot] {"entity":"rest_loc","value":"indian spot"}
-  #     - search for [restaurants] {"entity":"rest_loc","value":"restaurants"}
-  #     - I am looking for some [restaurants] {"entity":"rest_loc","value":"restaurants"} in Addis Ababa
-  #     - please help me to find [restaurants] {"entity":"rest_loc","value":"restaurants"} in Addis Ababa
   - intent: hotel_locations
     examples: |
       - i want to eat
@@ -158,14 +147,6 @@ nlu:
       - please help me to find restaurants in Addis Ababa
       - where is a good place for dinner?
 
-  # - intent: tourist_locations
-  #   examples: |
-  #     - i want to see [museum] {"entity":"tour_loc","value":"museum"}
-  #     - am looking for [zoo] {"entity":"tour_loc","value":"zoo"}
-  #     - am looking for [parks] {"entity":"tour_loc","value":"parks"}
-  #     - where can i find [museums] {"entity":"tour_loc","value":"museums"}
-  #     - are there [historical places] {"entity":"tour_loc","value":"historical places"} around here?
-
   - intent: tourist_locations
     examples: |
       - location
@@ -190,21 +171,6 @@ nlu:
       - what do you give?
       - Can I ask you a question?
 
-  - intent: my_passport
-    examples: |
-      - My passport is [0937949501]{"entity":"passport","value":"0937949501"}
-      - my passport is [09264758]{"entity":"passport","value":"09264758"}
-      - my passport is [EP09264758]{"entity":"passport","value":"EP09264758"}
-      - [3456789]{"entity":"passport","value":"3456789"} is my passport
-      - [00832Dv]{"entity":"passport","value":"00832Dv"}
-
-  - intent: my_email
-    examples: |
-      - My email is [bitseatt@gmail.com]{"entity":"email"}
-      - [blen@yahoo.com]{"entity":"email"}
-      - my email address is [bitkukush@hotmail.com]{"entity":"email"}
-      - you can reach me at [btadesse@excellerentsolutions.com]{"entity":"email"}
-
   - intent: out_of_scope
     examples: |
       - where do you live?
@@ -218,6 +184,7 @@ nlu:
       - I love you.
       - what is 1+1?
       - who is the prime minister of Ethiopia?
+
 
   - intent: folio
     examples: |

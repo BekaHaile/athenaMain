@@ -26,10 +26,10 @@ rules:
       - intent: work_greet
       - action: utter_service
 
-  - rule: Say sorry anytime the user says deny
+  - rule: Say Ok anytime the user says deny
     steps:
       - intent: deny
-      - action: utter_sorry
+      - action: utter_ok
 
   - rule: Say awesome anytime the user says ok
     steps:
@@ -40,11 +40,6 @@ rules:
     steps:
       - intent: greet
       - action: utter_greet
-
-  - rule: Ask the user to rephrase whenever they send a message with low NLU confidence
-    steps:
-      - intent: nlu_fallback
-      - action: utter_out_of_scope
 
   - rule: Ask the user if sad
     steps:
@@ -61,29 +56,15 @@ rules:
       - intent: tourist_locations
       - action: utter_tourists
 
-  - rule: Active form
-    steps:
-      - intent: send_email
-      - action: user_details_form
-      - active_loop: user_details_form
-
-  - rule: Submit form
-    condition:
-      # condition that form is active.
-      - active_loop: user_details_form
-    steps:
-      # Form is deactivated
-      - action: user_details_form
-      - active_loop: null
-      - slot_was_set:
-          - requested_slot: null
-      # The actions we want to run when the form is submitted.
-      - action: action_submit
-
   - rule: sorry
     steps:
       - intent: sorry
       - action: utter_okay
+
+  - rule: fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_default
 
   - rule: Active email form
     steps:

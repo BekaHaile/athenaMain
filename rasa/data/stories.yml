@@ -6,6 +6,8 @@ stories:
       - action: utter_greet
       - intent: hotel_locations
       - action: utter_hotels
+      - intent: affirm
+      - action: utter_awesome
 
   - story: tourist location
     steps:
@@ -13,6 +15,8 @@ stories:
       - action: utter_greet
       - intent: tourist_locations
       - action: utter_tourists
+      - intent: affirm
+      - action: utter_awesome
 
   - story: conversation 3
     steps:

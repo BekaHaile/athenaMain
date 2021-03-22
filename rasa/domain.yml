@@ -11,20 +11,9 @@ intents:
   - thanks
   - further_greet
   - hotel_locations
-    # use_entities:
-    #   - rest_loc
   - tourist_locations
-    # use_entities:
-    #   - tour_loc
   - work_greet
-  - out_of_scope
   - nlu_fallback
-  - my_passport:
-      use_entities:
-        - passport
-  - my_email:
-      use_entities:
-        - email
   - folio
   - sorry
   - send_email
@@ -37,21 +26,6 @@ slots:
     type: text
   email:
     type: text
-  emaill:
-    type: text
-  # subject:
-  #   type: text
-  # message:
-  #   type: text
-
-# entities:
-#   - rest_loc
-#   - tour_loc
-# slots:
-#   rest_loc:
-#     type: text
-#   tour_loc:
-#     type: text
 
 responses:
   utter_greet:
@@ -98,8 +72,8 @@ responses:
   utter_service:
     - text: "I can provide you list of recommended area restaurants \nI can get you directions to the most frequently requested locations \nI can get you a copy of the folio for your stay /0000"
 
-  utter_sorry:
-    - text: 'Sorry about that. /0000'
+  utter_ok:
+    - text: 'Okay. /0000'
 
   utter_awesome:
     - text: 'Awesome. /0000'
@@ -107,33 +81,25 @@ responses:
   utter_ask_passport:
     - text: Please enter your passport number. /0004
 
-  utter_ask_email:
-    - text: Please enter your email address. /0005
-
   utter_thanks:
     - text: Thanks for providing the values. /0000
 
   utter_details_thanks:
     - text: "Thank you for providing your details. \nThe copy of the folio for your stay has been sent to the email address {Email}. \nWe are looking forward to see you again! /0003"
 
-  utter_out_of_scope:
+  utter_sorry:
+    - text: "you will be fine. /0000"
+
+  utter_default:
+    - text: "Sorry, Could you please rephrase that? /0000"
     - text: "Sorry, I can't handle that request. /0000"
     - text: "Sorry, I'm not sure how to respond to that. Say 'help' for assistance. /0000"
-
-  utter_please_rephrase:
-    - text: "I'm sorry, I didn't quite understand that. Could you rephrase? /0000"
 
   utter_okay:
     - text: "It's okay. /0000"
 
-  utter_ask_emaill:
+  utter_ask_email:
     - text: 'please provide the email address /0005'
-
-  # utter_ask_subject:
-  #   - text: 'please provide the subject'
-
-  # utter_ask_message:
-  #   - text: 'please provide the message'
 
 actions:
   - action_submit
@@ -141,19 +107,10 @@ actions:
 
 forms:
   email_form:
-    emaill:
-      - type: from_text
-    passport:
-      - type: from_text
-    # message:
-    #   - type: from_text
-  user_details_form:
-    passport:
-      - type: from_entity
-        entity: passport
     email:
-      - type: from_entity
-        entity: email
+      - type: from_text
+    passport:
+      - type: from_text
 
 session_config:
   session_expiration_time: 80
