@@ -70,9 +70,18 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
-        title: Text('Athena'),
+        title: Text(
+          'Athena',
+        ),
+        backgroundColor: Color.fromRGBO(0, 165, 81, 1),
       ),
       body: Container(
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+          Color.fromRGBO(240, 245, 248, 1),
+          Color.fromRGBO(221, 231, 233, 1),
+          Color.fromRGBO(202, 213, 217, 1),
+        ])),
         padding: EdgeInsets.only(top: 10),
         child: Column(
           children: <Widget>[
@@ -98,16 +107,20 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                       child: FloatingActionButton(
                         onPressed: () async {
                           //Start litsening
-                          _listen();
+                          // _listen();
+                          Navigator.pushNamed(
+                            context,
+                            "/folio",
+                          );
                         },
                         child: _isListening
                             ? Loader()
                             : Icon(
                                 Icons.mic,
-                                color: Colors.white,
                               ),
-                        backgroundColor:
-                            _isListening ? Colors.white : Colors.red,
+                        backgroundColor: _isListening
+                            ? Colors.white
+                            : Color.fromRGBO(0, 165, 81, 1),
                         elevation: 0,
                       ),
                     ),
@@ -234,7 +247,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       title: Text('Please insert your email address below'),
       content: Container(
         child: TextField(
-          decoration: InputDecoration(hintText: "email"),
+          decoration: InputDecoration(hintText: "Email"),
           controller: textEditingController,
         ),
       ),
@@ -243,7 +256,10 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Cancel'),
+          child: Text(
+            'Cancel',
+            style: TextStyle(fontSize: 17),
+          ),
         ),
         TextButton(
           onPressed: () {
@@ -251,7 +267,11 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
             sendSms(textEditingController.text);
             Navigator.pop(context);
           },
-          child: Text('Submit'),
+          child: Text(
+            'Submit',
+            style:
+                TextStyle(color: Color.fromRGBO(0, 165, 81, 1), fontSize: 17),
+          ),
         ),
       ],
     );

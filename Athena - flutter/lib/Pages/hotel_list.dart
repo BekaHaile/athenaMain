@@ -13,6 +13,7 @@ class HotelList extends StatelessWidget {
             ? Text("Recommended area restaurants")
             : Text("Frequently requested locations"),
         elevation: 2,
+        backgroundColor: Color.fromRGBO(0, 165, 81, 1),
       ),
       body: Lists(data),
     );
@@ -110,112 +111,122 @@ class Lists extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      padding: EdgeInsets.all(6),
-      itemCount: data["type"] == "restaurant" ? _data.length : _data2.length,
-      itemBuilder: (BuildContext context, int index) {
-        Item item = data["type"] == "restaurant" ? _data[index] : _data2[index];
-        return InkWell(
-          onTap: () {
-            Navigator.pushNamed(context, "/hotelDetail", arguments: {
-              "image": item.image,
-              "name": item.title,
-              "distance": item.distance,
-              "location": item.location
-            });
-          },
-          child: Card(
-            elevation: 3,
-            child: Row(
-              children: <Widget>[
-                Container(
-                  height: 125,
-                  width: 110,
-                  padding:
-                      EdgeInsets.only(left: 0, top: 10, bottom: 70, right: 20),
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(item.image), fit: BoxFit.cover)),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.6,
-                        child: Text(
-                          item.title,
-                          style: TextStyle(
-                              color: Colors.deepOrange,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 17),
-                        ),
-                      ),
-                      Text(
-                        item.catagory,
-                        style: TextStyle(fontSize: 14, color: Colors.black87),
-                      ),
-                      Text(
-                        item.place,
-                        style: TextStyle(fontSize: 14, color: Colors.black87),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Icon(
-                            Icons.star,
-                            color: Colors.pink,
-                            size: 18,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.pink,
-                            size: 18,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.pink,
-                            size: 18,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.pink,
-                            size: 18,
-                          ),
-                          Icon(
-                            Icons.star,
-                            color: Colors.pink,
-                            size: 18,
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: <Widget>[
-                          Text(
-                            item.ratings,
-                            style: TextStyle(fontSize: 13),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            "Ratings",
-                            style: TextStyle(fontSize: 13),
-                          ),
-                        ],
-                      )
-                    ],
+    return Container(
+      decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+        Color.fromRGBO(240, 245, 248, 1),
+        Color.fromRGBO(221, 231, 233, 1),
+        Color.fromRGBO(202, 213, 217, 1),
+      ])),
+      child: ListView.builder(
+        padding: EdgeInsets.all(6),
+        itemCount: data["type"] == "restaurant" ? _data.length : _data2.length,
+        itemBuilder: (BuildContext context, int index) {
+          Item item =
+              data["type"] == "restaurant" ? _data[index] : _data2[index];
+          return InkWell(
+            onTap: () {
+              Navigator.pushNamed(context, "/hotelDetail", arguments: {
+                "image": item.image,
+                "name": item.title,
+                "distance": item.distance,
+                "location": item.location
+              });
+            },
+            child: Card(
+              elevation: 3,
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    height: 125,
+                    width: 110,
+                    padding: EdgeInsets.only(
+                        left: 0, top: 10, bottom: 70, right: 20),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: NetworkImage(item.image),
+                            fit: BoxFit.cover)),
                   ),
-                )
-              ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          width: MediaQuery.of(context).size.width * 0.6,
+                          child: Text(
+                            item.title,
+                            style: TextStyle(
+                                color: Color.fromRGBO(0, 165, 81, 1),
+                                fontWeight: FontWeight.w700,
+                                fontSize: 17),
+                          ),
+                        ),
+                        Text(
+                          item.catagory,
+                          style: TextStyle(fontSize: 14, color: Colors.black87),
+                        ),
+                        Text(
+                          item.place,
+                          style: TextStyle(fontSize: 14, color: Colors.black87),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Icon(
+                              Icons.star,
+                              color: Color.fromRGBO(213, 204, 41, 1),
+                              size: 18,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color.fromRGBO(213, 204, 41, 1),
+                              size: 18,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color.fromRGBO(213, 204, 41, 1),
+                              size: 18,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color.fromRGBO(213, 204, 41, 1),
+                              size: 18,
+                            ),
+                            Icon(
+                              Icons.star,
+                              color: Color.fromRGBO(213, 204, 41, 1),
+                              size: 18,
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            Text(
+                              item.ratings,
+                              style: TextStyle(fontSize: 13),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Text(
+                              "Ratings",
+                              style: TextStyle(fontSize: 13),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
-          ),
-        );
-      },
+          );
+        },
+      ),
     );
   }
 }

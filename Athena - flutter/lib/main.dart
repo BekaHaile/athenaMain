@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Voice',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.red,
+          primarySwatch: Colors.green,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: AthenaHome(),

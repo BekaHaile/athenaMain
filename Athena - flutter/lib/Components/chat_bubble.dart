@@ -118,7 +118,7 @@ class _ChatBubbleState extends State<ChatBubble> {
           const SizedBox(width: 5.0),
           CircleAvatar(
             child: Icon(Icons.person),
-            radius: 10.0,
+            radius: 15.0,
           ),
         ],
         SizedBox(
