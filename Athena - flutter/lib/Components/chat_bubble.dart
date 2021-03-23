@@ -59,7 +59,7 @@ class _ChatBubbleState extends State<ChatBubble> {
                 ),
                 decoration: BoxDecoration(
                   color: widget.chatMessage.type == MessageType.Sender
-                      ? Colors.red
+                      ? Color.fromRGBO(0, 165, 81, 1)
                       : Colors.white,
                   borderRadius: widget.chatMessage.type == MessageType.Sender
                       ? BorderRadius.only(

@@ -107,11 +107,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
                       child: FloatingActionButton(
                         onPressed: () async {
                           //Start litsening
-                          // _listen();
-                          Navigator.pushNamed(
-                            context,
-                            "/folio",
-                          );
+                          _listen();
                         },
                         child: _isListening
                             ? Loader()
