@@ -30,6 +30,7 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   bool _isListening = false;
   bool _isTalking = true;
   bool initialized = false;
+  String prevResponse = "";
 
   @override
   void initState() {
@@ -148,11 +149,9 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
       _speech.listen(
         onResult: (val) {
           setState(() {
-            _isListening = false;
             _isTalking = true;
-
-            if (val.recognizedWords != '') sendSms(val.recognizedWords);
           });
+          if (val.recognizedWords != '') sendSms(val.recognizedWords);
         },
         listenFor: Duration(seconds: 5),
         cancelOnError: false,
@@ -165,60 +164,85 @@ class _ChatDetailPageState extends State<ChatDetailPage> {
   }
 
   void sendSms(String text) async {
+    setState(() {
+      _isListening = false;
+    });
     ChatMessage newMessage =
         ChatMessage(message: text, type: MessageType.Sender);
     setState(() {
       chatMessage.insert(0, newMessage);
+      _isTalking = true;
     });
 
     dynamic data = {"message": text, "sender": "id344"};
     try {
       await API().postData(data).then((replyApi) async {
-        print(replyApi + 'is after wait');
+        print('repkly api is == ' + replyApi);
+        if (!replyApi.toString().contains("/")) {
+          ChatMessage replyMessage =
+              ChatMessage(message: replyApi, type: MessageType.Receiver);
 
-        dynamic responseList = replyApi.split('/');
-        String reply = responseList[0];
-        String type = responseList[1];
+          setState(() {
+            chatMessage.insert(0, replyMessage);
+          });
 
-        ChatMessage replyMessage =
-            ChatMessage(message: reply, type: MessageType.Receiver);
-
-        setState(() {
-          chatMessage.insert(0, replyMessage);
-        });
-        await flutterTts.speak(reply).then((value) {
-          Future.delayed(const Duration(seconds: 1), () {
-            if (type == '0001')
-              Navigator.pushNamed(context, "/hotelList",
-                  arguments: {"type": "restaurant"});
-            else if (type == '0002')
-              Navigator.pushNamed(context, "/hotelList",
-                  arguments: {"type": "locations"});
-            else if (type == '0003')
-              Navigator.pushNamed(
-                context,
-                "/folio",
-              );
-            else if (type == '0005')
-              showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    return _emailDialogue(context);
-                  });
-            else if (type == '0000' && reply == "Bye")
-              print("bye");
-            else
-              _listen();
-          }).then((value) {
-            setState(() {
-              _isTalking = false;
+          await flutterTts.speak(replyApi).then((value) {
+            Future.delayed(const Duration(milliseconds: 400), () {
+              if (replyApi == "Bye")
+                print("bye");
+              else
+                _listen();
+            }).then((value) {
+              setState(() {
+                _isTalking = false;
+              });
             });
           });
-          if (reply == "Bye")
-            setState(() {
-              _isTalking = false;
+        } else {
+          dynamic responseList = replyApi.split('/');
+          String reply = responseList[0];
+          String type = responseList[1];
+
+          ChatMessage replyMessage =
+              ChatMessage(message: reply, type: MessageType.Receiver);
+
+          setState(() {
+            chatMessage.insert(0, replyMessage);
+          });
+          await flutterTts.speak(reply).then((value) {
+            Future.delayed(const Duration(milliseconds: 400), () {
+              if (type == '0001')
+                Navigator.pushNamed(context, "/hotelList",
+                    arguments: {"type": "restaurant"});
+              else if (type == '0002')
+                Navigator.pushNamed(context, "/hotelList",
+                    arguments: {"type": "locations"});
+              else if (type == '0003')
+                Navigator.pushNamed(
+                  context,
+                  "/folio",
+                );
+              else if (type == '0005')
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return _emailDialogue(context);
+                    });
+              else if (type == '0000' && reply == "Bye")
+                print("bye");
+              else
+                _listen();
+            }).then((value) {
+              setState(() {
+                _isTalking = false;
+              });
             });
-        });
+            // if (reply == "Bye")
+            //   setState(() {
+            //     _isTalking = false;
+            //   });
+          });
+        }
       });
     } catch (e) {
       print(e);
