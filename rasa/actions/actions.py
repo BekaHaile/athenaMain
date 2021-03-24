@@ -59,7 +59,7 @@ def SendEmail(toaddr, passport):
 
     # string to store the body of the mail
     body = "Attached is the folio for your stay" + \
-        "- Passport Number - " + str(passport)
+        "- Passport Number - " + "******" + str(passport)
 
     pdf = MIMEApplication(open('123.pdf', 'rb').read())
 

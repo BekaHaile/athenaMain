@@ -79,7 +79,7 @@ responses:
     - text: 'Awesome. /0000'
 
   utter_ask_passport:
-    - text: Please enter your passport number. /0004
+    - text: Please enter the last 4 digits of your passport number. /0004
 
   utter_thanks:
     - text: Thanks for providing the values. /0000
@@ -88,10 +88,10 @@ responses:
     - text: "Thank you for providing your details. \nThe copy of the folio for your stay has been sent to the email address {Email}. \nWe are looking forward to see you again! /0003"
 
   utter_sorry:
-    - text: "you will be fine. /0000"
+    - text: 'you will be fine. /0000'
 
   utter_default:
-    - text: "Sorry, Could you please rephrase that? /0000"
+    - text: 'Sorry, Could you please rephrase that? /0000'
     - text: "Sorry, I can't handle that request. /0000"
     - text: "Sorry, I'm not sure how to respond to that. Say 'help' for assistance. /0000"
 
